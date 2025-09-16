@@ -2,6 +2,7 @@ import React from 'react';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import { Heart, Users, Globe, Award } from 'lucide-react';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'About Us - UK Food Recipes',
@@ -18,7 +19,7 @@ export default function AboutPage() {
             About UK Food Recipes
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We're passionate about bringing authentic British cuisine and international favourites 
+            We&apos;re passionate about bringing authentic British cuisine and international favourites 
             to your kitchen, with proper UK measurements and locally-sourced ingredient suggestions.
           </p>
         </div>
@@ -83,7 +84,7 @@ export default function AboutPage() {
             <div className="space-y-4 text-gray-600">
               <p>
                 UK Food Recipes was born from a simple frustration: trying to follow American recipes 
-                with cups and Fahrenheit temperatures, or European recipes that didn't account for 
+                with cups and Fahrenheit temperatures, or European recipes that didn&apos;t account for 
                 British ingredients and preferences.
               </p>
               <p>
@@ -92,7 +93,7 @@ export default function AboutPage() {
                 where to find ingredients in British supermarkets, every detail matters.
               </p>
               <p>
-                Today, we're proud to serve thousands of home cooks across the UK, helping them 
+                Today, we&apos;re proud to serve thousands of home cooks across the UK, helping them 
                 discover new flavours while celebrating the rich culinary heritage of Britain.
               </p>
             </div>
@@ -114,8 +115,8 @@ export default function AboutPage() {
             <div>
               <h3 className="text-xl font-semibold text-dark-slate mb-3">Accessibility Matters</h3>
               <p className="text-gray-600">
-                Good food shouldn't be complicated or expensive. We focus on recipes that use 
-                readily available ingredients and don't require specialist equipment.
+                Good food shouldn&apos;t be complicated or expensive. We focus on recipes that use 
+                readily available ingredients and don&apos;t require specialist equipment.
               </p>
             </div>
             <div>
@@ -135,7 +136,7 @@ export default function AboutPage() {
             <div>
               <h3 className="text-xl font-semibold text-dark-slate mb-3">Inclusive Community</h3>
               <p className="text-gray-600">
-                Whether you're a complete beginner or an experienced cook, our recipes and 
+                Whether you&apos;re a complete beginner or an experienced cook, our recipes and 
                 community welcome everyone to the joy of cooking.
               </p>
             </div>
@@ -183,18 +184,18 @@ export default function AboutPage() {
             get tips from fellow food enthusiasts, and discover new favourite recipes.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
+            <Link
               href="/recipes"
               className="px-6 py-3 bg-primary-500 text-white rounded-lg font-semibold hover:bg-primary-600 transition-colors"
             >
               Browse Recipes
-            </a>
-            <a
+            </Link>
+            <Link
               href="/contact"
               className="px-6 py-3 bg-white/20 text-white rounded-lg font-semibold hover:bg-white/30 transition-colors border border-white/30"
             >
               Get in Touch
-            </a>
+            </Link>
           </div>
         </div>
       </div>

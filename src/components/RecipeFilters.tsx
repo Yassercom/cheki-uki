@@ -18,7 +18,7 @@ const DIFFICULTIES = ['Easy', 'Medium', 'Hard'] as const;
 export default function RecipeFilters({ filters, onFiltersChange, className }: RecipeFiltersProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const updateFilters = (key: keyof IRecipeFilters, value: any) => {
+  const updateFilters = <K extends keyof IRecipeFilters>(key: K, value: IRecipeFilters[K]) => {
     onFiltersChange({ ...filters, [key]: value });
   };
 

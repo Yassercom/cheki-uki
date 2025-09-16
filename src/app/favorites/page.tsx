@@ -3,9 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import { Heart, Search } from 'lucide-react';
 import { useApp } from '@/contexts/AppContext';
-import { getRecipeBySlug } from '@/lib/api';
 import { Recipe } from '@/types/recipe';
 import RecipeCard from '@/components/RecipeCard';
+import Link from 'next/link';
 
 export default function FavoritesPage() {
   const { favorites } = useApp();
@@ -22,7 +22,8 @@ export default function FavoritesPage() {
             // Since we store IDs, we need to find recipes by ID
             // For now, we'll use a simple approach - in a real app, you'd have a proper API endpoint
             const mockRecipes = await import('../../../data/recipes.json');
-            return mockRecipes.default.find((recipe: any) => recipe.id === id);
+            const data = (mockRecipes.default as unknown) as Recipe[];
+            return data.find((recipe) => recipe.id === id) || null;
           })
         );
         
@@ -76,18 +77,18 @@ export default function FavoritesPage() {
               to save your favourites for easy access later.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
+              <Link
                 href="/recipes"
                 className="px-6 py-3 bg-primary-500 text-white rounded-lg font-semibold hover:bg-primary-600 transition-colors"
               >
                 Browse Recipes
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/recipes?tags=quick"
                 className="px-6 py-3 bg-white text-primary-500 border border-primary-500 rounded-lg font-semibold hover:bg-primary-50 transition-colors"
               >
                 Quick Meals
-              </a>
+              </Link>
             </div>
           </div>
         ) : (
@@ -165,7 +166,7 @@ export default function FavoritesPage() {
                 <Search className="w-16 h-16 text-gray-400 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-dark-slate mb-2">No recipes found</h3>
                 <p className="text-gray-600 mb-6">
-                  No favourite recipes match your search for "{searchQuery}".
+                  No favourite recipes match your search for &quot;{searchQuery}&quot;.
                 </p>
                 <button
                   onClick={() => setSearchQuery('')}

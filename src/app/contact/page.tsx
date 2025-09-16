@@ -1,6 +1,6 @@
 import React from 'react';
 import { Metadata } from 'next';
-import { Mail, MessageSquare, Phone, MapPin, Clock } from 'lucide-react';
+import { Mail, MessageSquare, MapPin, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Contact Us - UK Food Recipes',
@@ -17,8 +17,8 @@ export default function ContactPage() {
             Get in Touch
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We'd love to hear from you! Whether you have a recipe suggestion, feedback, 
-            or just want to say hello, don't hesitate to reach out.
+            We&apos;d love to hear from you! Whether you have a recipe suggestion, feedback, 
+            or just want to say hello, don&apos;t hesitate to reach out.
           </p>
         </div>
 
@@ -100,7 +100,7 @@ export default function ContactPage() {
                   rows={6}
                   required
                   className="w-full px-4 py-3 border border-soft-grey rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-vertical"
-                  placeholder="Tell us what's on your mind..."
+                  placeholder="Tell us what&apos;s on your mind..."
                 ></textarea>
               </div>
 
@@ -112,7 +112,7 @@ export default function ContactPage() {
                   className="mt-1 w-4 h-4 text-primary-500 border-gray-300 rounded focus:ring-primary-500"
                 />
                 <label htmlFor="newsletter" className="text-sm text-gray-600">
-                  I'd like to receive recipe updates and cooking tips via email
+                  I&apos;d like to receive recipe updates and cooking tips via email
                 </label>
               </div>
 
@@ -194,7 +194,7 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-semibold text-dark-slate mb-2">Do you offer cooking classes?</h3>
                   <p className="text-sm text-gray-600">
-                    While we don't currently offer classes, we're exploring virtual cooking sessions. 
+                    While we don&apos;t currently offer classes, we&apos;re exploring virtual cooking sessions. 
                     Stay tuned to our newsletter for updates!
                   </p>
                 </div>

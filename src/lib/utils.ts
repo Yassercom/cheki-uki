@@ -163,15 +163,15 @@ export function generateSlug(title: string): string {
 /**
  * Debounce function for search inputs
  */
-export function debounce<T extends (...args: unknown[]) => unknown>(
-  func: T,
+export function debounce<TArgs extends unknown[], TReturn>(
+  func: (...args: TArgs) => TReturn,
   wait: number
-): (...args: Parameters<T>) => void {
-  let timeout: NodeJS.Timeout;
+): (...args: TArgs) => void {
+  let timeout: ReturnType<typeof setTimeout>;
   
-  return (...args: Parameters<T>) => {
+  return (...args: TArgs) => {
     clearTimeout(timeout);
-    timeout = setTimeout(() => func(...args), wait);
+    timeout = setTimeout(() => { func(...args); }, wait);
   };
 }
 

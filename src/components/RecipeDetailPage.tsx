@@ -1,12 +1,11 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import { Clock, Users, Heart, Printer, Share2, ChefHat, Timer, Check, Plus, Minus } from 'lucide-react';
 import { Recipe } from '@/types/recipe';
 import { useApp } from '@/contexts/AppContext';
-import { formatCookingTime, getDifficultyColor, getTagColor, convertUnits, scaleIngredientQuantity, cn } from '@/lib/utils';
+import { formatCookingTime, getDifficultyColor, convertUnits, scaleIngredientQuantity, cn } from '@/lib/utils';
 import RecipeCard from './RecipeCard';
 
 interface RecipeDetailPageProps {

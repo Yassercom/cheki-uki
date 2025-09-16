@@ -46,24 +46,29 @@ export default function RecipesPage() {
   });
 
   // Debounced search function
-  const debouncedSearch = debounce(async (searchFilters: IRecipeFilters, searchSort: RecipeSort, page: number) => {
-    setLoading(true);
-    try {
+  const debouncedSearch = debounce(
+    (searchFilters: IRecipeFilters, searchSort: RecipeSort, page: number) => {
+      setLoading(true);
       const offset = (page - 1) * recipesPerPage;
-      const result = await getRecipes(searchFilters, searchSort, recipesPerPage, offset);
-      setRecipes(result.recipes);
-      setTotalRecipes(result.total);
-    } catch (error) {
-      console.error('Error fetching recipes:', error);
-    } finally {
-      setLoading(false);
-    }
-  }, 300);
+      getRecipes(searchFilters, searchSort, recipesPerPage, offset)
+        .then((result) => {
+          setRecipes(result.recipes);
+          setTotalRecipes(result.total);
+        })
+        .catch((error) => {
+          console.error('Error fetching recipes:', error);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    },
+    300
+  );
 
   // Fetch recipes when filters, sort, or page changes
   useEffect(() => {
     debouncedSearch(filters, sort, currentPage);
-  }, [filters, sort, currentPage]);
+  }, [filters, sort, currentPage, debouncedSearch]);
 
   // Update URL when filters change
   useEffect(() => {
