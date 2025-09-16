@@ -1,0 +1,104 @@
+[
+  {
+    "id": "1",
+    "title": "Easy British Roast Chicken",
+    "slug": "easy-british-roast-chicken",
+    "description": "Simple roast chicken with lemon & thyme, perfect for a Sunday dinner.",
+    "imageUrl": "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=900&h=700&fit=crop&crop=center",
+    "cuisine": "British",
+    "tags": ["dinner", "classic", "sunday-roast"],
+    "prepTimeMins": 15,
+    "cookTimeMins": 90,
+    "totalTimeMins": 105,
+    "difficulty": "Medium",
+    "baseServings": 4,
+    "ingredients": [
+      {"id": "i1", "name": "Whole chicken", "quantity": 1, "unit": "pcs", "note": "about 1.6kg"},
+      {"id": "i2", "name": "Lemon", "quantity": 1, "unit": "pcs", "note": "halved"},
+      {"id": "i3", "name": "Fresh thyme", "quantity": 3, "unit": "sprigs"},
+      {"id": "i4", "name": "Olive oil", "quantity": 2, "unit": "tbsp"},
+      {"id": "i5", "name": "Salt", "quantity": 1, "unit": "tsp"},
+      {"id": "i6", "name": "Black pepper", "quantity": 0.5, "unit": "tsp", "note": "freshly ground"}
+    ],
+    "steps": [
+      {"id": "s1", "text": "Preheat oven to 200°C (180°C fan)."},
+      {"id": "s2", "text": "Season chicken inside and out with salt and pepper. Stuff lemon halves and thyme inside cavity."},
+      {"id": "s3", "text": "Rub olive oil over skin and place in roasting tin."},
+      {"id": "s4", "text": "Roast for 1 hour 30 minutes until golden and juices run clear.", "durationMins": 90},
+      {"id": "s5", "text": "Rest for 10 minutes before carving.", "durationMins": 10}
+    ],
+    "author": {"name": "Chef Anna", "profileUrl": ""},
+    "datePublished": "10/09/2024",
+    "nutrition": {"calories": 285, "protein": 31, "carbs": 2, "fat": 16}
+  },
+  {
+    "id": "2",
+    "title": "Quick Vegetarian Curry",
+    "slug": "quick-vegetarian-curry",
+    "description": "15-minute curry with chickpeas and spinach, perfect for busy weeknights.",
+    "imageUrl": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=900&h=700&fit=crop&crop=center",
+    "cuisine": "Indian",
+    "tags": ["vegetarian", "30min", "quick", "healthy"],
+    "prepTimeMins": 10,
+    "cookTimeMins": 15,
+    "totalTimeMins": 25,
+    "difficulty": "Easy",
+    "baseServings": 2,
+    "ingredients": [
+      {"id": "i1", "name": "Chickpeas", "quantity": 400, "unit": "g", "note": "drained, 1 tin"},
+      {"id": "i2", "name": "Fresh spinach", "quantity": 100, "unit": "g"},
+      {"id": "i3", "name": "Onion", "quantity": 1, "unit": "pcs", "note": "medium, diced"},
+      {"id": "i4", "name": "Garlic cloves", "quantity": 2, "unit": "pcs", "note": "minced"},
+      {"id": "i5", "name": "Tinned tomatoes", "quantity": 400, "unit": "g", "note": "chopped"},
+      {"id": "i6", "name": "Curry powder", "quantity": 2, "unit": "tsp"},
+      {"id": "i7", "name": "Coconut milk", "quantity": 200, "unit": "ml"},
+      {"id": "i8", "name": "Vegetable oil", "quantity": 1, "unit": "tbsp"}
+    ],
+    "steps": [
+      {"id": "s1", "text": "Heat oil in a large pan over medium heat."},
+      {"id": "s2", "text": "Fry onion for 3-4 minutes until softened.", "durationMins": 4},
+      {"id": "s3", "text": "Add garlic and curry powder, cook for 1 minute.", "durationMins": 1},
+      {"id": "s4", "text": "Add tomatoes and simmer for 5 minutes.", "durationMins": 5},
+      {"id": "s5", "text": "Add chickpeas and coconut milk, simmer for 5 minutes.", "durationMins": 5},
+      {"id": "s6", "text": "Stir in spinach until wilted. Season and serve with rice."}
+    ],
+    "author": {"name": "Home Cook Sam"},
+    "datePublished": "01/08/2024",
+    "nutrition": {"calories": 320, "protein": 15, "carbs": 35, "fat": 12}
+  },
+  {
+    "id": "3",
+    "title": "Classic Afternoon Scones",
+    "slug": "classic-afternoon-scones",
+    "description": "Traditional British scones perfect with clotted cream and jam for afternoon tea.",
+    "imageUrl": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=900&h=700&fit=crop&crop=center",
+    "cuisine": "British",
+    "tags": ["baking", "tea-time", "traditional", "afternoon-tea"],
+    "prepTimeMins": 15,
+    "cookTimeMins": 12,
+    "totalTimeMins": 27,
+    "difficulty": "Easy",
+    "baseServings": 6,
+    "ingredients": [
+      {"id": "i1", "name": "Self-raising flour", "quantity": 300, "unit": "g"},
+      {"id": "i2", "name": "Butter", "quantity": 75, "unit": "g", "note": "cold, cubed"},
+      {"id": "i3", "name": "Caster sugar", "quantity": 25, "unit": "g"},
+      {"id": "i4", "name": "Milk", "quantity": 150, "unit": "ml", "note": "plus extra for brushing"},
+      {"id": "i5", "name": "Salt", "quantity": 0.5, "unit": "tsp"},
+      {"id": "i6", "name": "Baking powder", "quantity": 1, "unit": "tsp"}
+    ],
+    "steps": [
+      {"id": "s1", "text": "Preheat oven to 220°C (200°C fan). Line a baking tray."},
+      {"id": "s2", "text": "Mix flour, baking powder, salt and sugar in a bowl."},
+      {"id": "s3", "text": "Rub in cold butter until mixture resembles breadcrumbs."},
+      {"id": "s4", "text": "Add milk gradually to form a soft dough."},
+      {"id": "s5", "text": "Roll out to 2cm thick and cut into rounds."},
+      {"id": "s6", "text": "Place on tray, brush tops with milk."},
+      {"id": "s7", "text": "Bake for 10-12 minutes until golden.", "durationMins": 12},
+      {"id": "s8", "text": "Cool on wire rack. Serve with jam and clotted cream."}
+    ],
+    "author": {"name": "Baker Lou"},
+    "datePublished": "05/07/2024",
+    "nutrition": {"calories": 195, "protein": 5, "carbs": 32, "fat": 6}
+  }
+]

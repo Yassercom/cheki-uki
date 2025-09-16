@@ -1,7 +1,13 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  images: {
+    domains: ['source.unsplash.com'],
+    unoptimized: true
+  },
+  experimental: {
+    optimizeCss: true
+  }
+}
 
 export default nextConfig;
