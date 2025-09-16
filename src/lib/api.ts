@@ -189,8 +189,8 @@ async function getMockRecipes(
   // Apply sorting
   if (sort) {
     filteredRecipes.sort((a, b) => {
-      let aValue: any = a[sort.field];
-      let bValue: any = b[sort.field];
+      let aValue = a[sort.field];
+      let bValue = b[sort.field];
 
       if (sort.field === 'datePublished') {
         // Convert DD/MM/YYYY to Date for comparison

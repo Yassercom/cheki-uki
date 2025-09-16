@@ -1,10 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Search, Menu, X, Heart, ToggleLeft, ToggleRight } from 'lucide-react';
 import { useApp } from '@/contexts/AppContext';
-import { cn } from '@/lib/utils';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,7 +17,8 @@ export default function Header() {
     }
   };
 
-  const handleSearchKeyDown = (e: React.KeyboardEvent) => {
+  // Global keydown handler for '/' to focus search
+  const handleDocumentKeyDown = (e: KeyboardEvent) => {
     if (e.key === '/') {
       e.preventDefault();
       const searchInput = document.getElementById('search-input');
@@ -26,9 +26,9 @@ export default function Header() {
     }
   };
 
-  React.useEffect(() => {
-    document.addEventListener('keydown', handleSearchKeyDown as any);
-    return () => document.removeEventListener('keydown', handleSearchKeyDown as any);
+  useEffect(() => {
+    document.addEventListener('keydown', handleDocumentKeyDown);
+    return () => document.removeEventListener('keydown', handleDocumentKeyDown);
   }, []);
 
   return (
