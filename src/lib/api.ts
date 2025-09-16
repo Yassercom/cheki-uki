@@ -189,18 +189,39 @@ async function getMockRecipes(
   // Apply sorting
   if (sort) {
     filteredRecipes.sort((a, b) => {
-      let aValue = a[sort.field];
-      let bValue = b[sort.field];
+      const directionFactor = sort.direction === 'asc' ? 1 : -1;
+      const field = sort.field as keyof Recipe;
+      const getField = (r: Recipe): unknown => (r as unknown as Record<string, unknown>)[field as string];
 
+      // Handle date field specifically (expects DD/MM/YYYY)
       if (sort.field === 'datePublished') {
-        // Convert DD/MM/YYYY to Date for comparison
-        aValue = new Date(aValue?.split('/').reverse().join('-') || '');
-        bValue = new Date(bValue?.split('/').reverse().join('-') || '');
+        const parseDate = (v: unknown): number => {
+          if (typeof v !== 'string') return 0;
+          const parts = v.split('/');
+          if (parts.length !== 3) return 0;
+          const [dd, mm, yyyy] = parts;
+          const t = new Date(`${yyyy}-${mm}-${dd}`).getTime();
+          return Number.isNaN(t) ? 0 : t;
+        };
+
+        const aTime = parseDate(getField(a));
+        const bTime = parseDate(getField(b));
+        return (aTime - bTime) * directionFactor;
       }
 
-      if (aValue < bValue) return sort.direction === 'asc' ? -1 : 1;
-      if (aValue > bValue) return sort.direction === 'asc' ? 1 : -1;
-      return 0;
+      const aRaw = getField(a);
+      const bRaw = getField(b);
+
+      // Prefer numeric comparison when both values are numbers
+      if (typeof aRaw === 'number' && typeof bRaw === 'number') {
+        return (aRaw - bRaw) * directionFactor;
+      }
+
+      // Fallback to string comparison (case-insensitive)
+      const aStr = String(aRaw ?? '');
+      const bStr = String(bRaw ?? '');
+      const cmp = aStr.localeCompare(bStr, undefined, { sensitivity: 'base' });
+      return cmp * directionFactor;
     });
   }
 

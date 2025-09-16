@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { ArrowUpDown, Grid, List } from 'lucide-react';
 import { getRecipes } from '@/lib/api';
@@ -10,6 +10,22 @@ import RecipeFiltersComponent from '@/components/RecipeFilters';
 import { cn, debounce } from '@/lib/utils';
 
 export default function RecipesPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-cream">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            Loading recipes...
+          </div>
+        </div>
+      }
+    >
+      <RecipesPageContent />
+    </Suspense>
+  );
+}
+
+function RecipesPageContent() {
   const searchParams = useSearchParams();
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [totalRecipes, setTotalRecipes] = useState(0);
@@ -48,6 +64,7 @@ export default function RecipesPage() {
   // Debounced search function
   const debouncedSearch = debounce(
     (searchFilters: IRecipeFilters, searchSort: RecipeSort, page: number) => {
+
       setLoading(true);
       const offset = (page - 1) * recipesPerPage;
       getRecipes(searchFilters, searchSort, recipesPerPage, offset)
